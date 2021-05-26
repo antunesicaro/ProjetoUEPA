@@ -1,0 +1,482 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat';
+}
+
+.clear{
+    clear: both;
+}
+.container{
+    max-width:1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+html,body{
+    height: 100%;
+}
+header{
+    padding: 5px 2%;
+    background-color: #688293;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+header .logo a{
+    text-decoration: none;
+    float: left;
+    font-size: 25px;
+    color: white;
+    font-family: 'Pattaya', sans-serif;
+}
+
+header nav.menu-desktop{
+    float: right;
+}
+
+header nav.menu-desktop ul{
+    list-style-type: none;
+    padding: 6px;
+}
+
+header nav.menu-desktop  ul li{  
+    float: left;/*aqui usa pra deixar o menu um lado do outro ao invés de deixar em baixo, é uma div flutuada dentro de outra*/
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 0 20px;/*entre as li aplica espçao de 0 cima baixo e 20 direita esquerda*/
+}
+
+header ul li a{
+    text-decoration: none;
+    color: white;
+}
+header ul li a:hover{
+    color: #b4b4b4; 
+}
+
+section.parallax{
+    width: 100%;
+    min-height: 300px;
+    padding: 40px 0;
+    /*ajeitando*/
+    background-image: url(../imagens/toa-heftiba-6bKpHAun4d8-unsplash.jpg);
+    background-size: cover;
+    background-position: center;
+    /*configurando overlay*/
+    position: relative;/*torna div'pai' de refencia pra o absolute do overlay*/
+    /*parallax em si*/
+    background-attachment: fixed;
+}
+
+section.parallax > .container{
+    position: relative;
+    z-index: 2;
+    max-width: 960px;
+    color: white;
+}
+
+section.parallax h2{
+    text-align: center;
+}
+section.parallax p{
+    margin-top: 15px;
+    text-align: center;
+}
+section.parallax input[type=search]{
+    margin-top: 10px;
+    width: 100%;
+    height: 60px;
+    border-radius: 30px;
+    padding-left: 8px;
+}
+
+section.parallax input[type=submit]{
+    width: 200px;
+    height: 40px;
+    border-radius: 100px;
+    background-color:white;
+    color: black;
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 130%;
+}
+.overlay-parallax{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(20, 20, 20, 0.6);
+}
+
+/*AQUI COMEÇA  O MOSAICO*/
+
+/*float left flutua e o calc divide o espaço pra 8 imagens dentro de 100% que é o width*/
+.mosaico-single{
+    float: left;
+    width: calc(100% / 8);
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.img-mosaico-single1{/*width da imagem é 100(cada imagem)*/
+    width: 100%;/*tamanho individual da imagem, largura*/
+    padding-top: 100%;/*aqui serve pra dar a 'altura' para as imagens*/
+    border: 5px solid white;/*essa borda irá dividir as imagens*/
+    background-image:url(../imagens/cinema1.jpg);
+    background-size: cover;
+    background-position: center;
+}
+
+.img-mosaico-single2{/*width da imagem é 100(cada imagem)*/
+    width: 100%;/*tamanho individual da imagem, largura*/
+    padding-top: 100%;/*aqui serve pra dar a 'altura' para as imagens*/
+    border: 5px solid white;/*essa borda irá dividir as imagens*/
+    background-image:url(../imagens/cinema2.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.img-mosaico-single3{/*width da imagem é 100(cada imagem)*/
+    width: 100%;/*tamanho individual da imagem, largura*/
+    padding-top: 100%;/*aqui serve pra dar a 'altura' para as imagens*/
+    border: 5px solid white;/*essa borda irá dividir as imagens*/
+    background-image:url(../imagens/publi3.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.img-mosaico-single4{/*width da imagem é 100(cada imagem)*/
+    width: 100%;/*tamanho individual da imagem, largura*/
+    padding-top: 100%;/*aqui serve pra dar a 'altura' para as imagens*/
+    border: 5px solid white;/*essa borda irá dividir as imagens*/
+    background-image:url(../imagens/publi4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.img-mosaico-single5{/*width da imagem é 100(cada imagem)*/
+    width: 100%;/*tamanho individual da imagem, largura*/
+    padding-top: 100%;/*aqui serve pra dar a 'altura' para as imagens*/
+    border: 5px solid white;/*essa borda irá dividir as imagens*/
+    background-image:url(../imagens/prop5.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.img-mosaico-single6{/*width da imagem é 100(cada imagem)*/
+    width: 100%;/*tamanho individual da imagem, largura*/
+    padding-top: 100%;/*aqui serve pra dar a 'altura' para as imagens*/
+    border: 5px solid white;/*essa borda irá dividir as imagens*/
+    background-image:url(../imagens/prop6.jpg);
+    background-size: cover;
+    background-position: center;
+}
+/*AQUI TERMINA  O MOSAICO*/
+
+
+/*BOX EMBAIXO*/
+section.servicos > .container{/*aqui vou alterar o container , vou limitar ele, somente esse pq aqui eu quero que fique as minicaixas que vao conter o texto e parágrafo em baixo das imagens , da n pode ser tudo do mesmo tamanho*/
+    max-width:900px; /*maxima largura que deverá ficar o container e o conteudo, 'LIMITADOR'*/
+    display: flex;/*ficar flex, estudar mais sobre*/
+    align-items:center;/*quando botamos o display flex, essa propriedade é liberada e tem diversos tipos de layots que ela pode aparecer, nesse caso eu escolhi o do meio maior e os dois da ponta menores*/
+    /*aqui foi pra sobrepor o container que fizemos sobre o mosaico(imagens)*/
+    position:relative;
+    top: -26px; /*/*aqui foi pra sobrepor o container que fizemos sobre o mosaico(imagens)*/
+    
+}
+
+section.servicos >.container .box-servico h2{
+  color: white;
+  font-weight: normal;
+  font-size: 15px;
+  text-transform:uppercase;   
+}
+
+section.servicos >.container .box-servico p{
+    color: white;
+    font-weight: normal;
+    font-size: 12px;
+    margin-top: 8px;  
+  }
+
+/*aqui eu tô indo na caixa de servico e botando o primeiro com width menor pra dar o efeito de 1 e 3 menores e o do meio maior*/
+section.servicos >.container .box-servico:nth-of-type(1){
+    width: 30%;
+    padding: 30px 2%;/*cima baixo de 30px(onde a cor do bachground vai aparecer)*//*2% no padding pra n ficar as letras grudadas no final do background(da div)*/
+    background-color: #576975;
+    text-align: center;
+}
+
+section.servicos >.container .box-servico:nth-of-type(2){
+    width: 40%;/*juntando 40+30+30 dá os 100%*/
+    padding: 60px 2%;/*2% no padding pra n ficar as letras grudadas no final do background(da div)*/
+    background-color: #688293;
+    text-align: center;
+    background-image: none;
+}
+
+
+/*aqui eu tô indo na caixa de servico e botando o primeiro com width menor pra dar o efeito de 1 e 3 menores e o do meio maior*/
+section.servicos >.container .box-servico:nth-of-type(3){
+    width: 30%;
+    padding: 30px 2%;/*2% no padding pra n ficar as letras grudadas no final do background(da div)*/
+    background-color: #576975;
+    text-align: center;
+}
+
+
+/*segunda parte, foto e descrição profissional*/
+
+section.perfil-container{
+    padding:40px 0;
+}
+
+section.perfil-container .container{/*novo tamanho pro container pré-definido*/
+    max-width: 1000px;
+}
+
+
+section.perfil-container .perfil-wraper{/*div filha dentro do container*/
+    padding-top: 60%;/*se for 100%, vai herdar da div pai que é o container de 800px , dai botei menor pra imagen naõ ficar distorcida, funciona como se fosse a altura , porém a altura tem q ser maior do q a largura para botar a imagem, por isso 60% */
+    position: relative;
+}/*div pai do section,perfil-coontainer .perfil-wraper 2*/
+
+
+section.perfil-container .perfil-wraper2{/*vai herdar o padding-top da section.perfil-container .perfil-wraper */
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;/*não lê o padding top com base em porcentagem, ele precisa de altura*/
+    width: 100%;
+    height: 100%;/*altura desejada do display flex(todos 800px)*/
+    align-items: center;
+    
+    /*posso tirar o aligns itens se quiser pra subir mais o text e alinhar com a imagem da doutora*/
+    /*se fizer isso vai tb no  texto perfil e dá um padding cima baixo pra ficar bonito*/
+}
+
+section.perfil-container .img-perfil{/*imagem vai herdar a height 100% do wraper-2*/
+    width: 40%;/*como usei 60% na altura lá no padding-top do section.perfil-container .perfil-wraper, aqui precisa ser 40% de largura pra q n distorça e complete os 100%*/
+    height: 100%;/*100% pra pegar todos 800px*/
+    background-image: url('../imagens/img_perfil.png');
+    background-size: 100% 100%;
+}
+
+section.perfil-container .texto-perfil{
+    width: 60%;
+    padding: 0 30px;
+}
+
+section.perfil-container .texto-perfil h2{
+    color: #698293;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+section.perfil-container .texto-perfil p{
+    font-size: 15px;
+    color: rgb(190,190,190);
+    margin-top: 8px;
+    line-height: 24px/*pra ocupar mais a tela em comparação à imagem*/;
+}
+
+.h2-tratamento{
+    color: #737373;
+}
+
+.form-exp{
+    display: inline-block;
+    position: relative;
+    top: 7px;
+    left: 7px;
+    
+}
+
+.form-exp input[type=submit]{
+    cursor: pointer;
+}
+
+section.tratamentos input{
+    position: relative;
+    top: 7px;
+    border-radius: 50px;
+}
+
+section.tratamentos input[type=submit]{
+    cursor: pointer;
+}
+
+
+.tratamento-single{/*parte q une os textos h2 e p em uma div*/
+    padding:20px;
+}
+
+.tratamento-single h2{
+    font-size: 18px;
+    color: #737373;
+}
+
+.tratamento-single p{
+    padding: 10px 0;
+    font-size: 13px;
+    color: #b4b4b4;
+}
+
+section.tratamentos > .container{
+    padding: 50px 0;
+}
+
+section.depoimentos h2{/*titulo de onde fica escrito depoimentos*/
+    color: #698273;
+    text-align-last: center;
+    font-size: 18px;
+}
+
+section.depoimentos >.container{/*pega o contaianer depois do h2 do depoimentos*/
+    padding: 40px 0;/*pra dar distância pro titulo 'depoimentos'*/
+    max-width: 400px;/*reduz a largura do container sem precisar dar o text-align center pra deixar no meio, cabe a nós ficar experimentando valores para ver o melhor que se adequa a usar no width, quanto menor mais no centro,quanto maior maior o container*/ 
+    
+}
+
+section.depoimentos .depoimento-single{/*dentro da section.depoimentos >.container tem o nosso depoimento sozinho,que é único, dai posso centralizar só ele em específico pra n ter q centralizar toda div que ele está */
+    text-align: center;/*centraliza nosso depoiomento*/
+    width: 100%;
+    padding: 0 2%;/*pra que quando redimensionar em telas pequenas, tenha um espaço de 2% e n fique grudadinho a letra na página*/
+}
+
+.depoimento-single quote{/*quote é a tag do depoiomento entre aspas, a fala da pessoa*/
+    font-size: 15px;
+    color: #b4b4b4;
+}
+
+.depoimento-single .nome-depoimento{/*div q tem o nome da autora e a imagem , é a geral pra separar um pouco do quote*/
+    padding: 19px 0;/*nome da autora pra quote(espaço cima baixo)*/
+}
+
+.nome-depoimento img{/*imagem em especifico*/
+    width: 32px;
+    height: 32px;
+    display: inline-block;/*no plugin do slick, tem q deixar assim pois ele conserta automatico, ai  ia desalinhas se n deixar assim*/
+    border-radius: 16px;/*sempre a metade do tamnho pra ficar redondinho*/
+}
+
+.nome-depoimento span{
+    /*pra que fique alinhado o texto com o centro da imagem da pessoa*/
+    position: relative;
+    top: 7px;
+    /*pra que fique alinhado o texto com o centro da imagem da pessoa*/
+    font-size: 13px;
+    color: #b4b4b4;
+    display: inline-block;/*fica em uma linha*/
+    vertical-align:top;/*se o texto fica mais pra cima , meio ou baixo*/
+}
+
+
+
+footer{
+    padding: 30px 2%;
+    background-color: #688293;
+    text-align: center;
+    font-style: italic;
+    color: white;
+}
+
+footer .all-reserved{
+    margin-top: 10px;
+}
+
+
+/**Estilo para o plugin slick(deixa estilizado a seçao de depoimentos)**/	
+.slick-dotted ul{
+    list-style-type: none;
+    text-align: center;
+    position: relative;
+    margin-top: 50px;
+}
+
+.slick-dotted li{
+    display: inline-block;
+    margin:0 7px;
+}
+
+.slick-dotted button:focus{
+    outline: 0;
+}
+
+.slick-dotted li button{
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    color: #d8d8d8;
+    border-width: 0;
+    background: #d8d8d8;
+    opacity: 1;
+    cursor: pointer;
+}
+
+li.slick-active button{
+    background: #688293;
+    color: #688293;
+}
+
+.slick-slide:focus{outline: none;}
+/**Fim do estilo para o plugin**/
+
+
+
+/*Responsividade desktop*/
+
+@media screen and (max-width : 1024px){
+    .img-mosaico-single-social{/*pra quando chegar em resolução menor , não precisar aparecer todas imagens*/
+        width: calc(100% / 6);/*vao aparecer somente 6*/
+        padding-top:calc(100% / 6);/*vao aparecer somente 6*/
+    }
+
+    .mosaico-social > div:nth-of-type(1n+7)/*começa apartir da div 7 e incrementa nela e no resto(8 e 9) o diplay none*/{ /**/
+        display: none;
+    }
+    
+}
+
+@media screen and (max-width : 900px){
+    section.perfil-container .perfil-wraper2{/*vai herdar o padding-top da section.perfil-container .perfil-wraper */
+        /*position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        width: 100%;
+        height: 100%;
+        align-items: center;*/
+        display: inline-block;/*pra poder botar um em baixo do outro*/
+        text-align:center;
+        /*para resolver o problema de div q pega outra , deixa altura automatica e a faz de uma div static pra mover ela toda*/
+        height: auto;
+        position: static;   
+    }
+
+    section.perfil-container .perfil-wraper{/*nessa primeira div tem o padding de 60% , dai aqui no mobile a gente deixa como 0 já que a div tá estática e vai sobrar espaço*/
+        padding-top: 0;
+    }
+
+    section.perfil-container .img-perfil{
+        width: 50%;/*até qual largura vai a imagem no mobile*/
+        display: inline-block;/*pra ficar em um só bloco até 100%, dps quebra*/
+        padding-top: 70%;/*altura da imagem em si*/
+        height: auto;/*altura pra se auto ajustar no container e não deformar*/
+    }
+    
+    section.perfil-container .texto-perfil{
+        width: 100%;/* até onde o texto vai*/
+        padding: 80px 30px 30px 30px;/*padding ja eh manjado oq é*/ 
+        display: inline-block;/*pra fica um em baixo d ooutro*/
+        text-align: justify;/*formato de texto apenas*/
+    }
+}
+
+
+
